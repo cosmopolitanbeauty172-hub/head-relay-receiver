@@ -6,8 +6,8 @@ Head Relay and the Head Relay Receiver have no accounts or analytics, and we run
 do not collect or store your personal data ourselves. The iPhone app shows an ad from a third party,
 described below. The Windows receiver has no ads.
 
-**Advertising.** The iPhone app shows one skippable ad when it starts, through Google AdMob. Ads are
-not personalized and the app does not track you across other apps or websites. To serve and measure
+**Advertising.** The iPhone app shows one full-screen ad per launch, after your PC and AirPods
+connect, through Google AdMob. Ads are not personalized and the app does not track you across other apps or websites. To serve and measure
 the ad, Google may process data such as your IP address, device information, and ad interactions.
 See https://policies.google.com/privacy. In regions that require it, the app asks for your consent
 first.
