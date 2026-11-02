@@ -4,7 +4,7 @@
 
 The Windows side of Head Relay. The iPhone app sends AirPods head motion over Wi-Fi. This app
 smooths and predicts it, then drives any game with TrackIR or FreeTrack support directly, or feeds
-[opentrack](https://github.com/opentrack/opentrack) or DCS, or moves a virtual Xbox pad's right stick.
+[opentrack](https://github.com/opentrack/opentrack), or moves a virtual Xbox pad's right stick.
 
 ## Why a receiver
 
@@ -31,7 +31,8 @@ Then choose one of the connections below.
 
 ### Connect to TrackIR and FreeTrack games
 
-This is the default, and it needs nothing else installed.
+This is the default, and it needs nothing else installed. It works in DCS, War Thunder, and Euro
+Truck Simulator 2.
 
 1. In the receiver, set **Send to** to **FreeTrack**.
 2. Close opentrack and any other tracker software, so they don't fight over the game.
@@ -50,21 +51,6 @@ Use this if you want opentrack's own features, or a game it supports in another 
    `freetrack 2.0 Enhanced`, then press **Start**.
 2. In the receiver, set **Send to** to **opentrack**.
 3. Leave opentrack's mapping curves flat, because the receiver already applies its own.
-
-### Connect to DCS (direct)
-
-Use this if DCS doesn't respond to opentrack. It needs neither opentrack nor a TrackIR driver.
-
-1. In the receiver, press **Install to DCS**. This adds `HeadRelayExport.lua` to
-   `Saved Games\DCS\Scripts` and one line to `Export.lua`. Lines from other tools stay as they are.
-2. Check that **Send to** shows **DCS**.
-3. Start a mission, or restart it if one is running, because DCS reads the script at mission start.
-
-Close opentrack while you use this, so the two don't fight over the view.
-
-The script drives DCS's head tracker commands 2144, 2145, and 2146. They were read from
-DCS 2.9.31's `Input.dll`, so a DCS update could change them. If tracking stops after an update,
-that is the first thing to check. Multiplayer servers can turn off `Export.lua` scripts.
 
 ### Connect to games without head tracking
 
@@ -112,5 +98,5 @@ current profile by themselves, and picking another one applies it at once.
 
 ## Network
 
-Head packets arrive on UDP 4250, and the DCS script listens on 127.0.0.1 UDP 4248. The receiver answers only the sender it hears from, and sends nothing to the internet. PC audio is unencrypted PCM on
+Head packets arrive on UDP 4250. The receiver answers only the sender it hears from, and sends nothing to the internet. PC audio is unencrypted PCM on
 your local network, off by default, and goes only to a phone that holds the pairing key.
